@@ -27,7 +27,7 @@ body {
 
 header {
     width: 100%;
-    height: 160px;
+    height: 140px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -37,7 +37,7 @@ header {
 
 .logo_wrap {
     width: 100%;
-    height: 120px;
+    height: 100px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -147,6 +147,7 @@ main {
     /* border: 2px solid red; */
     overflow: hidden;
     box-shadow: inset;
+    margin-top: 20px;
 }
 
     main .s_wrap {
@@ -165,8 +166,11 @@ main {
         padding: 30px;
         margin-right: 200px;
         border-radius: 20px;
-        border: 2px solid rgb(230, 190, 10);
-        box-shadow: inset 0 0 10px 1px rgb(20, 20, 20), 0 0 5px 1px rgb(20, 20, 20);
+        background-image: linear-gradient(rgb(230, 230, 230) 0%, rgb(60, 60, 60) 100%);
+        border: 6px solid rgb(180, 180, 180);
+        box-shadow: 0 5px 10px 1px rgb(20, 20, 20), inset 0 0 20px 5px rgb(200, 200, 200),
+        inset 0 0 10px 2px rgb(200, 200, 200), inset 0 0 7px 2px rgb(200, 200, 200);
+         /* inset 0 0 10px 6px linear-gradient(rgb(230, 230, 230) 0%, rgb(60, 60, 60) 100%); */
 
     }
 
@@ -178,15 +182,41 @@ main {
 /* SECCIONES ########################################################## */
 
 .partners {
-    overflow-y: scroll;
+    overflow: hidden;
     display: flex;
-    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
 }
 
-.partners .partner {
-    width: 60%;
-    height: 100px;
-    border: 1px solid black;
+.partners .arrow {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    position: relative;
+    background-color: rgb(180, 180, 180);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 2px solid black; */
+    padding-top: 10px;
+    border: 6px solid rgb(180, 180, 180);
+    transition: background-color 0.5s ease;
 }
+
+    .partners .arrow img {
+        height: 40px;
+        filter: invert(13%) sepia(0%) saturate(5604%) hue-rotate(184deg);
+        transition: filter 0.5s ease;
+    }
+    .partners .arrow:hover {
+        background-color: rgb(60, 60, 60);
+    }
+    .partners .arrow:hover img {
+        filter: invert(51%) sepia(99%) saturate(746%) hue-rotate(18deg) brightness(103%) contrast(101%);
+    }
+
+
+    .arrow.left {margin-left: -50px; transform: rotate(270deg);}
+    .arrow.right {margin-right: -50px; transform: rotate(90deg);}
 
     
