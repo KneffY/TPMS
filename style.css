@@ -46,8 +46,23 @@ header {
 
     .logo_wrap img {
         height: 60px;
-        filter: invert(13%) sepia(0%) saturate(5604%) hue-rotate(184deg) brightness(88%) contrast(69%);
+        filter: invert(13%) sepia(0%) saturate(5604%) hue-rotate(184deg) 
+        brightness(88%) contrast(69%);
+        transition: filter 0.5s ease;
+        /* filter: invert(13%) sepia(0%) saturate(5604%) hue-rotate(184deg) 
+        brightness(88%) contrast(69%) drop-shadow(0 0 5px red); */
+        /* box-sizing: inset 0 0 5px 5px red; */
     }
+
+        .logo_wrap img:hover {
+            animation: rotate_gear 3s infinite linear;
+            filter: invert(13%) sepia(0%) saturate(5604%) hue-rotate(184deg) 
+            brightness(88%) contrast(69%) drop-shadow(0 0 3px red);
+        }
+        @keyframes rotate_gear {
+            from {transform: rotate(0deg);}
+            to {transform: rotate(360deg);}
+        }
 
     .logo_wrap .titulo {
         color: var(--dark-color);
@@ -78,6 +93,7 @@ header {
                 /* border: 2px solid black; */
                 background-size: contain;
                 margin-left: 30px;
+                transition: filter 0.5s ease;
                 filter: invert(13%) sepia(0%) saturate(5604%) hue-rotate(184deg) brightness(88%) contrast(69%);
             }
             .rrss #linkedin {background-image: url('./logotipo-de-linkedin.png');}
